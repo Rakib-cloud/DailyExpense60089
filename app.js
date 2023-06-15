@@ -19,12 +19,10 @@ app.use("/api/v1", router)
 
 const server = () => {
     db()
-    // app.listen(PORT, "127.0.0.1", () => {
-    //     console.log('listening to port:', PORT)
-    // })
-    app.listen(PORT, () => {
-        console.log("Running on port 5000.");
-      });
+    app.listen(PORT, `${process.env.LOCALURL}`, () => {
+        console.log('listening to port:', PORT)
+    })
+   
 }
 
 server()
